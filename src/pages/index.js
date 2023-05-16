@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
@@ -8,63 +7,38 @@ import * as styles from "../components/index.module.css"
 
 const links = [
   {
-    text: "Tutorial - LOL",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
+    text: "View Teams",
+    url: "rosters",
     description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
+      "Overveiw of all the rosters in the nfl. Work in progress.",
   },
   {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
+    text: "Rookies",
+    url: "rookies",
     description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
+      "An overview of all the rookies in the nfl",
   },
   {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
+    text: "Big Board",
+    url: "big-board",
     description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
+      "Big board of next years 50 best rookies. Here you will have the opportunity to add a player to your  bigboard. You will also have the opportunity to move them up or down your list. ",
   },
   {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
+    text: "Rookie Team of the season",
+    url: "team-of-year",
     description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
+      "Current team of the year in the NFL.",
   },
 ]
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
 
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
+const subLinks = [
+  { text: "LinkedIn", url: "https://www.linkedin.com/in/victor-w-t-norris-b58336107/" },
   {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
+    text: "GitHub",
+    url: "https://github.com/vwnorris",
+  }
 ]
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
@@ -72,29 +46,20 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 const IndexPage = () => (
   <Layout>
     <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
+    <StaticImage
+      src="../images/NFLlogo.png"
+      width={128} // Made image twice as big
+      quality={95}
+      formats={["auto", "webp", "avif"]}
+      alt="NFL Logo" // Remember to include meaningful alt text for accessibility
+      style={{ marginBottom: `var(--space-3)` }}
+      placeholder="none" // Add this line
+    />
+
       <h1>
-        Welcome to <b>Gatsby!</b>
+        Welcome to <b>NFL Dashboard!</b>
       </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
+
     </div>
     <ul className={styles.list}>
       {links.map(link => (
@@ -109,20 +74,15 @@ const IndexPage = () => (
         </li>
       ))}
     </ul>
-    {moreLinks.map((link, i) => (
+    {subLinks.map((link, i) => (
       <React.Fragment key={link.url}>
         <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
+        {i !== subLinks.length - 1 && <> · </>}
       </React.Fragment>
     ))}
   </Layout>
 )
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
 export const Head = () => <Seo title="Home" />
 
 export default IndexPage
