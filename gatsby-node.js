@@ -16,3 +16,16 @@ exports.createPages = async ({ actions }) => {
     defer: true,
   })
 }
+
+exports.sourceNodes = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type MongodbNflAppProspects implements Node {
+      player: String
+      position: String
+      team: String
+      image: String
+    }
+  `
+  createTypes(typeDefs)
+}
