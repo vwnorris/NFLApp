@@ -9,8 +9,8 @@ const RookieCard = ({ rookie, id=-1}) => {
                     <CardMedia
                         component="img"
                         sx={{ width: 151 }}
-                        image={rookie.pictureURL}
-                        alt={rookie.name}
+                        image={rookie.image}
+                        alt={rookie.player}
                     />
                     {id != -1 ? <Typography variant="h4" color="primary" component="div" fontStyle="italic" fontWeight="bold">
                         {id}
@@ -20,19 +20,12 @@ const RookieCard = ({ rookie, id=-1}) => {
                 <Grid item xs={4}>
                     <CardContent sx={{ flex: '1 0 auto' }}>
                         <Typography component="div" variant="h5">
-                            {rookie.name}
+                            {rookie.player}
                         </Typography>
                         <Typography variant="subtitle1" color="text.secondary" component="div" fontStyle="italic">
                             {rookie.position}
                         </Typography>
                         <Typography variant="subtitle1" color="text.secondary" component="div" fontStyle="italic">
-                            {rookie.collegeTeam}
-                        </Typography>
-                    </CardContent>
-                </Grid>
-                <Grid item xs={4} container justifyContent="center">
-                    <CardContent>
-                        <Typography variant="subtitle1" color="text.secondary" component="div">
                             {rookie.team}
                         </Typography>
                     </CardContent>

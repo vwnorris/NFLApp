@@ -48,12 +48,12 @@ const IndexPage = () => (
     <div className={styles.textCenter}>
     <StaticImage
       src="../images/NFLlogo.png"
-      width={128} // Made image twice as big
+      width={128}
       quality={95}
       formats={["auto", "webp", "avif"]}
-      alt="NFL Logo" // Remember to include meaningful alt text for accessibility
+      alt="NFL Logo"
       style={{ marginBottom: `var(--space-3)` }}
-      placeholder="none" // Add this line
+      placeholder="none"
     />
 
       <h1>

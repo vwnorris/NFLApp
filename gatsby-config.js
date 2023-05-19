@@ -31,5 +31,14 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: { 
+        dbName: `NFL_app`, 
+        collection: `Prospects`,
+        connectionString: 'mongodb+srv://victor123:victor123@cluster0.0bpezxd.mongodb.net/'
+        }
+    },
+    
   ],
 }
