@@ -1,18 +1,7 @@
 import * as React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-
 import Layout from "../components/layout"
 import RookieCard from "../components/RookieCard"
-
-const rook1 = {
-  pictureURL: "https://assets.morningconsult.com/wp-uploads/2022/01/12105451/GettyImages-1363526906-scaled.jpg",
-  name: "Mahomes",
-  position: "QB",
-  collegeTeam: "Texas Tech",
-  team: "Chiefs"
-}
-const n = 50
-
 
 const BigBoard = () => {
   const data = useStaticQuery(graphql`

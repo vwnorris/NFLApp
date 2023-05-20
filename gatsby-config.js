@@ -36,9 +36,21 @@ module.exports = {
       options: { 
         dbName: `NFL_app`, 
         collection: `Prospects`,
-        connectionString: 'mongodb+srv://victor123:victor123@cluster0.0bpezxd.mongodb.net/'
+        connectionString: 'mongodb+srv://victor123:victor123@cluster0.0bpezxd.mongodb.net/NFL_app?retryWrites=true&w=majority'
         }
     },
-    
+    {
+      // API sourcer in gatsby
+      resolve: 'gatsby-source-apiserver',
+      options: {
+        url: `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/03/roster`,
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        name: `apiData`,
+        verboseOutput: true, // For debugging purposes
+      },
+    },
   ],
 }
