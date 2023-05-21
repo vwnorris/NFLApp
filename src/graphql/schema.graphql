@@ -1,0 +1,45 @@
+type Query {
+  apiData: ApiData
+  allMongodbNflAppProspects: [ProspectEdge]
+}
+
+type ApiData {
+  athletes: [Team]!
+}
+
+type Team {
+  position: String!
+  items: [Athlete]!
+}
+
+type Athlete {
+  displayName: String!
+  college: College!
+  headshot: Headshot!
+  jersey: String!
+  position: Position!
+}
+
+type College {
+  name: String!
+}
+
+type Headshot {
+  href: String!
+}
+
+type Position {
+  abbreviation: String!
+}
+
+
+type ProspectEdge {
+  node: ProspectNode!
+}
+
+type ProspectNode {
+  player: String!
+  position: String!
+  team: String!
+  image: String!
+}
