@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import MapComponent from "../components/mapComponent" 
 import Layout from "../components/layout"
 
