@@ -4,9 +4,9 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Sandbox Gatsby Project`,
+    title: `NFL Dashboard`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `Victor Norris`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
@@ -28,7 +28,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/barLogo.png`,
       },
     },
     {

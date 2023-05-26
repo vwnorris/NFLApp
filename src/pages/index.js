@@ -1,6 +1,5 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
@@ -13,10 +12,10 @@ const links = [
       "Overveiw of all the rosters in the nfl. Work in progress.",
   },
   {
-    text: "Rookies",
-    url: "rookies",
+    text: "Locations",
+    url: "locations",
     description:
-      "An overview of all the rookies in the nfl",
+      "An overview of all the teams in the nfl",
   },
   {
     text: "Big Board",
@@ -31,6 +30,7 @@ const links = [
       "Current team of the year in the NFL.",
   },
 ]
+
 
 
 const subLinks = [
