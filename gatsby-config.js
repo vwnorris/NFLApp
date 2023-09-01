@@ -48,7 +48,7 @@ module.exports = {
         headers: {
           'Content-Type': 'application/json'
         },
-        name: `apiData`,
+        name: `apiNFLData`,
         verboseOutput: true, // For debugging purposes
       },
     },

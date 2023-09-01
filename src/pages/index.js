@@ -33,7 +33,6 @@ const links = [
 ]
 
 
-
 const subLinks = [
   { text: "LinkedIn", url: "https://www.linkedin.com/in/victor-w-t-norris-b58336107/" },
   {
@@ -41,6 +40,26 @@ const subLinks = [
     url: "https://github.com/vwnorris",
   }
 ]
+
+// The URL of the API you want to fetch from
+const apiUrl = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/03/roster';
+
+// Using the Fetch API to get data
+fetch(apiUrl)
+  .then(response => {
+    // Check if the response is successful
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json(); // Parse the response as JSON
+  })
+  .then(data => {
+    console.log(data); // Log the data
+  })
+  .catch(error => {
+    console.error('There was a problem fetching the data:', error);
+  });
+
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 

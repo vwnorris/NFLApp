@@ -7,27 +7,28 @@ import { Button, Grid } from "@mui/material";
 const Rosters = () => {
     const rosterData = useStaticQuery(graphql`
     query MyQuery2 {
-      apiData {
+      apiNflData {
         athletes {
           position
           items {
             displayName
-            college {
+            college{
               name
             }
-            headshot {
+            headshot{
               href
             }
             jersey
             position {
-              abbreviation
+                abbreviation
             }
           }
         }
       }
     }
   `)
-  const [og, dg, sg] = rosterData.apiData.athletes;
+
+  const [og, dg, sg] = rosterData.apiNflData.athletes;
   console.log(og)
 
   const offense = og.items.map((athlete) => (
